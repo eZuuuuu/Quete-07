@@ -14,26 +14,27 @@ class App extends React.Component {
     super(props);
     this.state = {
       employee: sampleEmployee,
-    }
+    };
     this.getEmployee = this.getEmployee.bind(this);
   }
 
   
-  getEmployee() {
+  getEmployee = ()=>{
     axios.get('https://simpsons-quotes-api.herokuapp.com/quotes')
-      .then(response => response.data)
-      .then(data => {
-        console.log(data)
-        this.setState({
-          employee: data[0],
-        });
-    });
+    .then(response => response.data)
+    .then(data =>{
+      console.log(data)
+      this.setState({
+        employee : data[0],
+      })
+    })
   }
 
   render() {
     return (
       <div className="App">
-        <DisplayEmployee employee={sampleEmployee} />
+        <DisplayEmployee 
+          employee={this.state.employee} />
         <button type="button" onClick={this.getEmployee}>Get employee</button>
       </div>
     );
@@ -41,3 +42,4 @@ class App extends React.Component {
 }
 
 export default App;
+
