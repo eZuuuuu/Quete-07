@@ -35,7 +35,7 @@ class App extends React.Component {
       <div className="App">
         <DisplayEmployee 
           employee={this.state.employee} />
-        <button type="button" onClick={this.getEmployee}>Get employee</button>
+        <button type="button" onClick={this.getEmployee}>Let's change !</button>
       </div>
     );
   }
