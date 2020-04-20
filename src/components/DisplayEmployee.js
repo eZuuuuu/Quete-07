@@ -1,20 +1,17 @@
 import React from 'react';
-  
-function DisplayEmployee({ employee }) {
-  return (
-    <div className="DisplayEmployee">
-      <img
-        src={employee.picture}
-        alt={employee.name}
-      />
-      <ul>
-        <li>
-          {employee.name}
-        </li>
-        <li>{employee.fact}</li>
-      </ul>
-    </div>
-  );
-};
-  
+
+
+function DisplayEmployee({simpson}){
+   return(
+    <div className="Quote">
+        <p>{simpson.quote}</p>
+            <img 
+                src = {simpson.image}
+                alt= {simpson.character}>
+           </img>
+           <h1>{simpson.character}</h1>
+       </div>
+   )
+}
+
 export default DisplayEmployee;
